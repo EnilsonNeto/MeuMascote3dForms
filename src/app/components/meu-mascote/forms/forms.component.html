@@ -30,7 +30,7 @@
 
       <div class="mb-3">
         <label for="characterType" class="form-label">3. Que tipo de personagem você imagina? Exemplo: Animal, figura
-          humana, criatura fictícia, entre outros (DESCREVA COM DETALHES)</label><span class="required">*</span>
+          humana, criatura fictícia, entre outros <br> (DESCREVA COM DETALHES)<span class="required">*</span></label>
         <input type="text" class="form-control larger-input" id="characterType" formControlName="characterType"
           placeholder="Digite o tipo de personagem"
           [ngClass]="{'is-invalid': clientForm.get('characterType')?.invalid && clientForm.get('characterType')?.touched}" />
