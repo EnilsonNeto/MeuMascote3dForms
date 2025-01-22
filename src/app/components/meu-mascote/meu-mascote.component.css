@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: url('src/assets/images/piramide.jpg') no-repeat center center; /* Imagem de fundo */
+    background-size: cover;  /* Faz com que a imagem cubra toda a tela */
+    background-attachment: fixed; /* A imagem ficará fixa ao rolar a página */
+    background-position: center 15%;
+}
+
+.overlay {
+    position: absolute;  /* Para posicionar a camada acima da imagem */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%; /* Ajuste a altura conforme necessário */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de opacidade */
+    z-index: 1; /* Garantir que a camada colorida fique acima da imagem */
+}
+
+app-forms {
+    position: relative;  /* Para garantir que o conteúdo do app-forms fique acima da camada de sobreposição */
+    z-index: 2;  /* Garantir que o conteúdo não fique atrás da camada de fundo */
+}

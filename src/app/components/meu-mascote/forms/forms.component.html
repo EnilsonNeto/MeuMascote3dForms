@@ -1,0 +1,97 @@
+<div class="card">
+  <div class="card-header">
+    <img src="/assets/images/logo.png" alt="">
+  </div>
+  <div class="card-body">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="companyName" class="form-label">1. Qual seu nome ou nome da sua empresa?</label><span
+          class="required">*</span>
+        <input type="text" class="form-control" id="companyName" formControlName="companyName"
+          placeholder="Digite seu nome"
+          [ngClass]="{'is-invalid': clientForm.get('companyName')?.invalid && clientForm.get('companyName')?.touched}" />
+        <div *ngIf="clientForm.get('companyName')?.invalid && clientForm.get('companyName')?.touched"
+          class="invalid-feedback">
+          O nome ou nome da empresa é obrigatório.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="mainFeatures" class="form-label">2. Quais são as principais características do mascote? Exemplo:
+          Vestimenta, segurando algo, entre outros.</label><span class="required">*</span>
+        <input type="text" class="form-control larger-input" id="mainFeatures" formControlName="mainFeatures"
+          placeholder="Digite as características"
+          [ngClass]="{'is-invalid': clientForm.get('mainFeatures')?.invalid && clientForm.get('mainFeatures')?.touched}" />
+        <div *ngIf="clientForm.get('mainFeatures')?.invalid && clientForm.get('mainFeatures')?.touched"
+          class="invalid-feedback">
+          As características do mascote são obrigatórias.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="characterType" class="form-label">3. Que tipo de personagem você imagina? Exemplo: Animal, figura
+          humana, criatura fictícia, entre outros (DESCREVA COM DETALHES)</label><span class="required">*</span>
+        <input type="text" class="form-control larger-input" id="characterType" formControlName="characterType"
+          placeholder="Digite o tipo de personagem"
+          [ngClass]="{'is-invalid': clientForm.get('characterType')?.invalid && clientForm.get('characterType')?.touched}" />
+        <div *ngIf="clientForm.get('characterType')?.invalid && clientForm.get('characterType')?.touched"
+          class="invalid-feedback">
+          O tipo de personagem é obrigatório.
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="mascotAge" class="form-label">4. Qual a idade do mascote?</label><span class="required">*</span>
+          <input type="number" class="form-control" id="mascotAge" formControlName="mascotAge" maxlength="3"
+            placeholder="Digite a idade"
+            [ngClass]="{'is-invalid': clientForm.get('mascotAge')?.invalid && clientForm.get('mascotAge')?.touched}"
+            style="appearance: none; -moz-appearance: textfield; -webkit-appearance: none;" inputmode="numeric" />
+          <div *ngIf="clientForm.get('mascotAge')?.invalid && clientForm.get('mascotAge')?.touched"
+            class="invalid-feedback">
+            A idade do mascote é obrigatória.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="mascotGender" class="form-label">5. Qual Gênero do mascote?</label><span class="required">*</span>
+          <input type="text" class="form-control" id="mascotGender" formControlName="mascotGender"
+            placeholder="Digite o gênero"
+            [ngClass]="{'is-invalid': clientForm.get('mascotGender')?.invalid && clientForm.get('mascotGender')?.touched}" />
+          <div *ngIf="clientForm.get('mascotGender')?.invalid && clientForm.get('mascotGender')?.touched"
+            class="invalid-feedback">
+            O gênero do mascote é obrigatório.
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <label for="whatsapp" class="form-label">6. Número para contato do WhatsApp</label><span
+            class="required">*</span>
+          <input type="text" class="form-control" id="whatsapp" formControlName="whatsapp" maxlength="15"
+            placeholder="Digite seu número do WhatsApp"
+            [ngClass]="{'is-invalid': clientForm.get('whatsapp')?.invalid && clientForm.get('whatsapp')?.touched}"
+            (input)="applyPhoneMask($event)" />
+          <div *ngIf="clientForm.get('whatsapp')?.invalid && clientForm.get('whatsapp')?.touched"
+            class="invalid-feedback">
+            O número de WhatsApp é obrigatório e deve ser válido.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="email" class="form-label">7. Qual seu email?</label><span class="required">*</span>
+          <input type="email" class="form-control" id="email" formControlName="email" placeholder="Digite seu email"
+            [ngClass]="{'is-invalid': clientForm.get('email')?.invalid && clientForm.get('email')?.touched}" />
+          <div *ngIf="clientForm.get('email')?.invalid && clientForm.get('email')?.touched" class="invalid-feedback">
+            O email é obrigatório e deve ser válido.
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="button-container text-center">
+        <button class="btn" type="submit" [disabled]="clientForm.invalid">Enviar Formulário</button>
+      </div>
+    </form>
+  </div>
+</div>
