@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   private readonly baseUrl = 'https://api.airtable.com/v0/';
-  private readonly baseId = 'appstC6ZmjoUde6p2'; // Substitua pelo ID da base
-  private readonly apiKey = 'patl26py7PnXrIsB0.62be93f4402749d3bdbe9c4e5ce4d592346f14deb28a3eefee98bf392d64d9f6'; // Substitua pelo seu PAT
+  private readonly baseId = 'appFk4GudnV9OjcWt';
+  private readonly apiKey = 'patlptp6S76rS2oCd.afb73fbbcdb98e44025665de4abff1319add6b6c791bbd10f190146e6652fd96'; 
 
   constructor(private http: HttpClient) {}
 
